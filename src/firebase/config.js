@@ -16,7 +16,7 @@ const firebaseConfig ={
       firebase.initializeApp(firebaseConfig);
   }
 
-  export const createUserProfileDocument = async (userAuth, additionalData, {navigation}) => {
+  export const createUserProfileDocument = async (userAuth, additionalData) => {
     if (!userAuth) return;
   
     const userRef = firestore.doc(`users/${userAuth.uid}`);
@@ -32,13 +32,12 @@ const firebaseConfig ={
           email,
           createdAt,
           ...additionalData
-         
         });
       } catch (error) {
         console.log('error creating user', error.message);
       }
     }
-    navigation.navigate('Home', {user: data});
+  
     return userRef;
   };
   
@@ -46,12 +45,12 @@ const firebaseConfig ={
   export const firestore = firebase.firestore();
   
   const provider = new firebase.auth.GoogleAuthProvider();
-  const provider1 = new firebase.auth.FacebookAuthProvider();
+  const providers = new firebase.auth.GoogleAuthProvider();
 
 
   provider.setCustomParameters({ prompt: 'select_account' });
   export const signInWithGoogle = () => auth.signInWithPopup(provider);
-  export const signInWithFacebook = () => auth.signInWithPopup(provider1);
+  export const signInWithFacebook = () => auth.signInWithPopup(providers);
   
 
 
