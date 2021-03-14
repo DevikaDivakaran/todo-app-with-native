@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Text, StyleSheet, View, Button, FlatList } from 'react-native';
-import TodoItem from '../../components/TodoItem';
-import TodoInput from '../../components/TodoInput';
+import TodoItem from '../../components/todoItem';
+import TodoInput from '../../components/todoInput';
 
 export default function HomeScreen({navigation}) {
   const [coursetodos, setCoursetodos] = useState([]);

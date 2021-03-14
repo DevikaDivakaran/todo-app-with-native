@@ -19,7 +19,27 @@ export default StyleSheet.create({
         paddingLeft: 16
     },
     button: {
-        backgroundColor: '#4073ff',
+        backgroundColor: '#011ffd',
+        marginLeft: 30,
+        marginRight: 30,
+        marginTop: 20,
+        height: 48,
+        borderRadius: 5,
+        alignItems: "center",
+        justifyContent: 'center'
+    },
+    buttonGoogle: {
+        backgroundColor: '#4285F4',
+        marginLeft: 30,
+        marginRight: 30,
+        marginTop: 20,
+        height: 48,
+        borderRadius: 5,
+        alignItems: "center",
+        justifyContent: 'center'
+    },
+    buttonFacebook: {
+        backgroundColor: '#3b5998',
         marginLeft: 30,
         marginRight: 30,
         marginTop: 20,
@@ -43,7 +63,7 @@ export default StyleSheet.create({
         color: '#2e2e2d'
     },
     footerLink: {
-        color: "#788eec",
+        color: "#011ffd",
         fontWeight: "bold",
         fontSize: 16
     }

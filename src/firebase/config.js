@@ -45,7 +45,7 @@ const firebaseConfig ={
   export const firestore = firebase.firestore();
   
   const provider = new firebase.auth.GoogleAuthProvider();
-  const providers = new firebase.auth.GoogleAuthProvider();
+  const providers = new firebase.auth.FacebookAuthProvider();
 
 
   provider.setCustomParameters({ prompt: 'select_account' });

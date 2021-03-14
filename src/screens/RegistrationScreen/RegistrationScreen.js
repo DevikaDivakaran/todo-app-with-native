@@ -20,6 +20,7 @@ export default function RegistrationScreen({navigation}) {
     if (password !== confirmPassword) {
       alert('passwords dont match, try again!');
       return;
+      
     }
     //authentication process - registration
   
@@ -50,6 +51,7 @@ export default function RegistrationScreen({navigation}) {
       });
       
   };
+
 
   return (
     <View style={styles.container}>
@@ -115,13 +117,13 @@ export default function RegistrationScreen({navigation}) {
         </View>
         
         <TouchableOpacity
-          style={styles.button}
+          style={styles.buttonGoogle}
           onPress={signInWithGoogle} isGoogleSignIn>
           <Text style={styles.buttonTitle}>Sign In With Google </Text>
         </TouchableOpacity>
         
          <TouchableOpacity
-          style={styles.button}
+          style={styles.buttonFacebook}
           onPress={signInWithFacebook} isFacebookSignIn>
           <Text style={styles.buttonTitle}>Sign In With Facebook</Text>
         </TouchableOpacity>
