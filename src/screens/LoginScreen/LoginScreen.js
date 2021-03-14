@@ -60,19 +60,6 @@ export default function LoginScreen({navigation}) {
               Sign up
             </Text>
           </Text>
-          <TouchableOpacity
-          style={styles.buttonGoogle}
-          onPress={() => signInWithGoogle}>
-          <Text style={styles.buttonTitle}>SignIn With Google </Text>
-        </TouchableOpacity>
-        
-         <TouchableOpacity
-          style={styles.buttonFacebook}
-          onPress={() => signInWithFacebook}>
-          <Text style={styles.buttonTitle}>Sign
-          In With Facebook</Text>
-        </TouchableOpacity>
-
         </View>
       </KeyboardAwareScrollView>
     </View>

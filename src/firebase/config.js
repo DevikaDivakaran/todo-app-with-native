@@ -16,7 +16,7 @@ const firebaseConfig ={
       firebase.initializeApp(firebaseConfig);
   }
 
-  export const createUserProfileDocument = async (userAuth, additionalData) => {
+  export const createUserProfileDocument = async (userAuth, additionalData, {navigation}) => {
     if (!userAuth) return;
   
     const userRef = firestore.doc(`users/${userAuth.uid}`);
@@ -32,12 +32,13 @@ const firebaseConfig ={
           email,
           createdAt,
           ...additionalData
+         
         });
       } catch (error) {
         console.log('error creating user', error.message);
       }
     }
-  
+    navigation.navigate('Home', {user: data});
     return userRef;
   };
   

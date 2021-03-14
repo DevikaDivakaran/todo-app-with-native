@@ -3,7 +3,7 @@ import {Image, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import styles from './styles';
 
-import {firebase} from '../../firebase/config';
+import {firebase, signInWithGoogle, signInWithFacebook} from '../../firebase/config';
 
 export default function RegistrationScreen({navigation}) {
   const [fullName, setFullName] = useState('');
@@ -113,8 +113,18 @@ export default function RegistrationScreen({navigation}) {
             </Text>
           </Text>
         </View>
-
         
+        <TouchableOpacity
+          style={styles.button}
+          onPress={signInWithGoogle} isGoogleSignIn>
+          <Text style={styles.buttonTitle}>Sign In With Google </Text>
+        </TouchableOpacity>
+        
+         <TouchableOpacity
+          style={styles.button}
+          onPress={signInWithFacebook} isFacebookSignIn>
+          <Text style={styles.buttonTitle}>Sign In With Facebook</Text>
+        </TouchableOpacity>
 
       </KeyboardAwareScrollView>
     </View>

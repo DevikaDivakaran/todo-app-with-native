@@ -27,27 +27,7 @@ export default StyleSheet.create({
         paddingLeft: 16
     },
     button: {
-        backgroundColor: '#4073ff',
-        marginLeft: 30,
-        marginRight: 30,
-        marginTop: 20,
-        height: 48,
-        borderRadius: 5,
-        alignItems: "center",
-        justifyContent: 'center'
-    },
-    buttonGoogle: {
-        backgroundColor: '#4073ff',
-        marginLeft: 30,
-        marginRight: 30,
-        marginTop: 20,
-        height: 48,
-        borderRadius: 5,
-        alignItems: "center",
-        justifyContent: 'center'
-    },
-    buttonFacebook: {
-        backgroundColor: '#3b5998',
+        backgroundColor: '#788eec',
         marginLeft: 30,
         marginRight: 30,
         marginTop: 20,
