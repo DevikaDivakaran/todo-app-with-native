@@ -1,19 +1,23 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center'
-    },
-    input: {
-        height: 48,
-        borderRadius: 5,
-        overflow: 'hidden',
-        backgroundColor: 'white',
-        marginTop: 10,
-        marginBottom: 10,
-        marginLeft: 30,
-        marginRight: 30,
-        paddingLeft: 16
-    }
+    
+    screen: {
+        padding: 50
+        
+      },
+      about: {
+        color: "#800080",
+        fontWeight: "bold",
+        fontSize: 20,
+        alignItems: "flex-end",
+      },
+      button: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        width: '100%'
+      },
+      buttonTitle: {
+        width: '40%'
+      }
 })

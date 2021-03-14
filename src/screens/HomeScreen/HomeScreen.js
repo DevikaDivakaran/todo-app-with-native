@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Text, StyleSheet, View, Button, FlatList } from 'react-native';
 import TodoItem from '../../components/todoItem';
 import TodoInput from '../../components/todoInput';
+import styles from './styles';
 
 export default function HomeScreen({navigation}) {
   const [coursetodos, setCoursetodos] = useState([]);
@@ -32,10 +33,12 @@ export default function HomeScreen({navigation}) {
   };
 
   return (
-    <View style={styles.screen}>
     <View>
-     <Text  onPress={() => onAboutPress()}>About</Text>
+      <View>
+          <Text  style={styles.about} onPress={() => onAboutPress()}>About</Text>
     </View>
+    <View style={styles.screen}>
+    
       <Button title="Add to your todo List" onPress={() => setIsAddMode(true)} />
       <TodoInput
         visible={isAddMode}
@@ -54,20 +57,6 @@ export default function HomeScreen({navigation}) {
         )}
       />
     </View>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  screen: {
-    padding: 50
-    
-  },
-  button: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    width: '100%'
-  },
-  buttonTitle: {
-    width: '40%'
-  }
-});
