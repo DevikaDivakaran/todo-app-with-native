@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import {Image, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import styles from './styles';
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
 
 export default function LoginScreen({navigation}) {
   const [email, setEmail] = useState('');
@@ -16,7 +14,13 @@ export default function LoginScreen({navigation}) {
   };
 
   const onLoginPress = () => {
-    console.log('clicked on login button');
+    if(email=='' ||  password=='') {
+
+      alert('Please enter all the values');
+    }
+  else{
+    navigation.navigate('Home');
+  }
   };
 
   //html render

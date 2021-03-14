@@ -3,7 +3,7 @@ import {Image, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import styles from './styles';
 
-import {firebase, signInWithGoogle, signInWithFacebook} from '../../firebase/config';
+import {auth, firebase, signInWithGoogle, signInWithFacebook} from '../../firebase/config';
 
 export default function RegistrationScreen({navigation}) {
   const [fullName, setFullName] = useState('');
@@ -17,6 +17,7 @@ export default function RegistrationScreen({navigation}) {
 
   const onRegisterPress = () => {
     //process of registration
+    navigation.navigate('Login');
     if (password !== confirmPassword) {
       alert('passwords dont match, try again!');
       return;
@@ -24,7 +25,7 @@ export default function RegistrationScreen({navigation}) {
     }
     //authentication process - registration
   
-   
+  
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
@@ -35,12 +36,13 @@ export default function RegistrationScreen({navigation}) {
           email,
           fullName,
         };
+
         const usersRef = firebase.firestore().collection('users');
         usersRef
           .doc(uid)
           .set(data)
           .then(() => {
-            navigation.navigate('Home', {user: data});
+            navigation.navigate('Home', {user: data}  );
           })
           .catch((error) => {
             alert(error);
@@ -51,7 +53,6 @@ export default function RegistrationScreen({navigation}) {
       });
       
   };
-
 
   return (
     <View style={styles.container}>
@@ -118,13 +119,13 @@ export default function RegistrationScreen({navigation}) {
         
         <TouchableOpacity
           style={styles.buttonGoogle}
-          onPress={signInWithGoogle} isGoogleSignIn>
+          onPress={signInWithGoogle}>
           <Text style={styles.buttonTitle}>Sign In With Google </Text>
         </TouchableOpacity>
         
          <TouchableOpacity
           style={styles.buttonFacebook}
-          onPress={signInWithFacebook} isFacebookSignIn>
+          onPress={signInWithFacebook}>
           <Text style={styles.buttonTitle}>Sign In With Facebook</Text>
         </TouchableOpacity>
 
