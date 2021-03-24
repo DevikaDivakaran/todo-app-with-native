@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Text, StyleSheet, View, Button, FlatList } from 'react-native';
+import { Text, StyleSheet, View, FlatList } from 'react-native';
 import TodoItem from '../../components/todoItem';
 import TodoInput from '../../components/todoInput';
 import styles from './styles';
-import Button from '../components/Button'
+import Button from '../../components/Button'
 
 export default function HomeScreen({navigation}) {
   const [coursetodos, setCoursetodos] = useState([]);
@@ -15,10 +15,10 @@ export default function HomeScreen({navigation}) {
     navigation.navigate('About');
   };
   const onGLPressed = () => {
-    navigation.navigate('GeoLoc');
+    navigation.navigate('GeoLocation');
   };
-  const onGLPressed = () => {
-    navigation.navigate('imgPck');
+  const onIMPPressed = () => {
+    navigation.navigate('ImagePicker');
   };
   
   const addtodoHandler = todoTitle => {
@@ -42,20 +42,20 @@ export default function HomeScreen({navigation}) {
   return (
     <View>
       <View>
-          <Text  style={styles.about} onPress={() => onAboutPress()}>About</Text>
-    </View>
-    <View style={styles.screen}>
-      <View>
-      <Button mode="contained" onPress={onGLPressed}>
+      <Text  style={styles.about} onPress={() => onAboutPress()}>About</Text>
+    </View> 
+          <Button   style={styles.button1} onPress={onGLPressed}>
         GeoLocation
       </Button>
-       <Button mode="contained" onPress={onIMPPressed}>
+       <Button  style={styles.button2} onPress={onIMPPressed}>
         Image Picker
       </Button>
-      </View>
+    <View style={styles.screen}>
+      
+      
    
       <Button title="Add to your todo List" onPress={() => setIsAddMode(true)} />
-      <TodoInput
+      <TodoInput 
         visible={isAddMode}
         onAddtodo={addtodoHandler}
         onCancel={canceltodoAdditionHandler}

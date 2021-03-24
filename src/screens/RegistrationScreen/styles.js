@@ -24,6 +24,8 @@ export default StyleSheet.create({
         marginRight: 30,
         marginTop: 20,
         height: 48,
+        marginLeft: 200,
+       marginRight: 200,
         borderRadius: 5,
         alignItems: "center",
         justifyContent: 'center'
@@ -36,6 +38,8 @@ export default StyleSheet.create({
         height: 48,
         borderRadius: 5,
         alignItems: "center",
+         marginLeft: 200,
+        marginRight: 200,
         justifyContent: 'center'
     },
     buttonFacebook: {
@@ -45,6 +49,8 @@ export default StyleSheet.create({
         marginTop: 20,
         height: 48,
         borderRadius: 5,
+         marginLeft: 200,
+        marginRight: 200,
         alignItems: "center",
         justifyContent: 'center'
     },
