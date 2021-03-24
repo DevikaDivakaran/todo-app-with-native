@@ -3,6 +3,7 @@ import { Text, StyleSheet, View, Button, FlatList } from 'react-native';
 import TodoItem from '../../components/todoItem';
 import TodoInput from '../../components/todoInput';
 import styles from './styles';
+import Button from '../components/Button'
 
 export default function HomeScreen({navigation}) {
   const [coursetodos, setCoursetodos] = useState([]);
@@ -13,7 +14,13 @@ export default function HomeScreen({navigation}) {
   const onAboutPress = () => {
     navigation.navigate('About');
   };
-
+  const onGLPressed = () => {
+    navigation.navigate('GeoLoc');
+  };
+  const onGLPressed = () => {
+    navigation.navigate('imgPck');
+  };
+  
   const addtodoHandler = todoTitle => {
     setCoursetodos(currenttodos => [
       ...currenttodos,
@@ -38,7 +45,15 @@ export default function HomeScreen({navigation}) {
           <Text  style={styles.about} onPress={() => onAboutPress()}>About</Text>
     </View>
     <View style={styles.screen}>
-    
+      <View>
+      <Button mode="contained" onPress={onGLPressed}>
+        GeoLocation
+      </Button>
+       <Button mode="contained" onPress={onIMPPressed}>
+        Image Picker
+      </Button>
+      </View>
+   
       <Button title="Add to your todo List" onPress={() => setIsAddMode(true)} />
       <TodoInput
         visible={isAddMode}

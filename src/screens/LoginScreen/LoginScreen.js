@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Image, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import styles from './styles';
+import TextInput from '../components/TextInput'
 
 export default function LoginScreen({navigation}) {
   const [email, setEmail] = useState('');
@@ -30,8 +31,12 @@ export default function LoginScreen({navigation}) {
       <KeyboardAwareScrollView
         style={{flex: 1, width: '100%'}}
         keyboardShouldPersistTaps="always">
-        <Image styles={styles.logo} source={require('../../../assets/icon.png')} />
 
+        <View style={styles.logo}>
+        <Image source = {require('../../../assets/icon.png')}
+        style={{width: '90%', resizeMode: 'contain', margin: 30}}
+        />
+      </View>
         <TextInput
           style={styles.input}
           placeholder="E-mail"
