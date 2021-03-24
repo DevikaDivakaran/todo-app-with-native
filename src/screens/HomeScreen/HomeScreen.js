@@ -14,6 +14,9 @@ export default function HomeScreen({navigation}) {
   const onAboutPress = () => {
     navigation.navigate('About');
   };
+  const onLogOutPress = () => {
+    navigation.navigate('Login');
+  };
   const onGLPressed = () => {
     navigation.navigate('GeoLocation');
   };
@@ -40,9 +43,11 @@ export default function HomeScreen({navigation}) {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <View>
       <Text  style={styles.about} onPress={() => onAboutPress()}>About</Text>
+      <Text  style={styles.about} onPress={() => onLogOutPress()}>LogOut</Text>
+
     </View> 
           <Button   style={styles.button1} onPress={onGLPressed}>
         GeoLocation
@@ -55,12 +60,12 @@ export default function HomeScreen({navigation}) {
       
    
       <Button title="Add to your todo List" onPress={() => setIsAddMode(true)} />
-      <TodoInput 
+      <TodoInput sy
         visible={isAddMode}
         onAddtodo={addtodoHandler}
         onCancel={canceltodoAdditionHandler}
       />
-      <FlatList
+      <FlatList 
         keyExtractor={(item, index) => item.id}
         data={coursetodos}
         renderItem={itemData => (
